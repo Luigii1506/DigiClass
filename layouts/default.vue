@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="theme--light">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -115,3 +115,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .theme--light {
+    background: #fafafa; 
+    color: rgba(0, 0, 0, 0.87);
+  }
+</style>
