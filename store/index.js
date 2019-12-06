@@ -44,7 +44,7 @@ const createStore = () => {
       storeData: [
         {
           storeData:[
-            {img: 'https://image.flaticon.com/icons/svg/135/135728.svg', price: 1.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/135/135728.svg', price: 3.00, total: 0},
             {img: 'https://image.flaticon.com/icons/svg/415/415767.svg', price: 2.00, total: 0},
             {img: 'https://image.flaticon.com/icons/svg/2224/2224255.svg', price: 4.00, total: 0}
           ],
@@ -56,8 +56,20 @@ const createStore = () => {
         },
         {
           storeData:[
-            {img: 'https://image.flaticon.com/icons/svg/1703/1703028.svg', price: 4.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/123/123281.svg', price: 4.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/1159/1159085.svg', price: 4.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/2224/2224128.svg', price: 6.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/347/347565.svg', price: 3.00, total: 0},
+          ],
+          dificultad: 1,
+          title: 'Mi tienda', 
+          avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg', 
+          type: "tienda",
+          categoria: "Cereales"
+        },
+        {
+          storeData:[
+            {img: 'https://image.flaticon.com/icons/svg/1703/1703028.svg', price: 5.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/123/123281.svg', price: 7.00, total: 0},
             {img: 'https://image.flaticon.com/icons/svg/123/123283.svg', price: 4.00, total: 0}
           ],
           dificultad: 2,
@@ -68,9 +80,9 @@ const createStore = () => {
         },
         {
           storeData:[
-            {img: 'https://image.flaticon.com/icons/svg/1159/1159085.svg', price: 0.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/2224/2224128.svg', price: 0.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/347/347565.svg', price: 0.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/1159/1159085.svg', price: 4.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/2224/2224128.svg', price: 6.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/347/347565.svg', price: 3.00, total: 0},
           ],
           dificultad: 3,
           title: 'Mi tienda', 
