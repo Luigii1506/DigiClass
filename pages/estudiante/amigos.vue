@@ -8,7 +8,7 @@
             <v-list-item
                 v-for="item in items"
                 :key="item.title"
-                @click="toGame"
+                @click=""
             >
                 <v-list-item-avatar>
                     <v-img :src="item.avatar"></v-img>
@@ -33,8 +33,9 @@
     layout: 'estudianteLayout',
     data: () => ({
       items: [
-        { active: true, title: 'Mi tienda', avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg' },
-        { active: true, title: 'Rompecabezas', avatar: 'https://image.flaticon.com/icons/svg/1256/1256638.svg' },
+        { active: true, title: 'Luis Gerardo Encinas Ramos', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+        { active: true, title: 'Edgar Flores Perez', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+        { active: true, title: 'Andres Rodriguez Sanchez', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
       ]
     }),
     methods: {

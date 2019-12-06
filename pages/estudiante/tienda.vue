@@ -1,10 +1,15 @@
 <template>
     <v-card class="v-card-menu ">
       <div class="title-actividad">
-        Tienda
+        En construcion...
       </div>
       <div class="row-wrapper">
-        tienda
+        <v-col cols="12">
+          <img src="https://image.flaticon.com/icons/svg/1660/1660192.svg" class="img-warning"/>
+        </v-col>
+        <v-col>
+            <v-btn large color="primary" class="btn-logout" @click="logout">Logout</v-btn>
+        </v-col>
       </div>      
     </v-card>
 </template>
@@ -13,10 +18,26 @@
 
 export default {
   layout: 'estudianteLayout',
+  methods: {
+    logout() {
+      this.$router.push('/');
+    }
+  }
 }
 </script>
 
 <style scoped>
+
+.btn-logout {
+  margin: auto;
+  display: block;
+}
+
+.img-warning {
+  width: 400px;
+  margin: auto;
+  display: block;
+}
 
   .vertical {
     position: relative;
@@ -33,8 +54,8 @@ export default {
 
   .title-actividad {
     text-align: center;
-    color: rebeccapurple;
-    font-size: 24px;
+    color: #E53935;
+    font-size: 36px;
     font-weight: 700;
     padding-top: 8px;
   }

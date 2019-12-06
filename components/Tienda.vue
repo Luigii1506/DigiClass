@@ -35,22 +35,22 @@
             <v-row wrap>
                 <v-col cols="12" md="4">
                     <img src="~/static/1_peso_T.png" class="img-monedas" style="margin-bottom: 15px;">
-                    <v-text-field type="number" v-model.number="objeto1" class="input-numbers" outlined single-line hide-details color="light-green accent-3"></v-text-field>
+                    <v-text-field type="number" min="0" v-model.number="objeto1" class="input-numbers" outlined single-line hide-details color="light-green accent-3"></v-text-field>
                 </v-col>
                 <v-col cols="12" md="4">
                     <img src="~/static/2_peso_T.png" class="img-monedas" style="margin-bottom: 16px;">
-                    <v-text-field type="number" v-model.number="objeto2" class="input-numbers" outlined single-line hide-details color="light-green accent-3"></v-text-field>
+                    <v-text-field type="number" min="0" v-model.number="objeto2" class="input-numbers" outlined single-line hide-details color="light-green accent-3"></v-text-field>
                 </v-col>
                 <v-col cols="12" md="4">
                     <img src="~/static/5_peso_T.png" class="img-monedas" style="margin-bottom: 21px;">
-                   <v-text-field type="number" v-model.number="objeto3" class="input-numbers" outlined single-line hide-details color="light-green accent-3"></v-text-field>
+                   <v-text-field type="number" min="0" v-model.number="objeto3" class="input-numbers" outlined single-line hide-details color="light-green accent-3"></v-text-field>
                 </v-col>
                 <v-col cols="12" class="btn-col">
                     <v-btn @click="comparar" class="btn-comprar">Comprar</v-btn>
                 </v-col>
             </v-row>
         </div>
-          <v-dialog
+        <v-dialog
           v-model="dialog"
           max-width="500"
         >
@@ -78,12 +78,76 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
+        <v-dialog
+            v-model="dialog2"
+            max-width="350"
+        >
+        <v-card>
+            <v-card-title class="headline">Felicidades, ganaste ...</v-card-title>
+
+            <v-card-text>
+               <div>
+                   <v-row>
+                       <v-col cols="12">
+                           <div class="coin-wrapper">       
+                                <span class="icon-span"> + 3 </span>
+                                <img src="https://image.flaticon.com/icons/svg/336/336007.svg" class="coin" />
+                            </div>
+                           
+                       </v-col>
+                       <v-col cols="12">
+                           Muy bien hecho, sigue asi
+                       </v-col>
+                   </v-row>
+                </div>
+            </v-card-text>
+
+            <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn
+                color="green darken-1"
+                text
+                @click="dialog2 = false"
+            >
+                Agree
+            </v-btn>
+            </v-card-actions>
+        </v-card>
+        </v-dialog>
+        <v-dialog
+            v-model="dialog3"
+            max-width="350"
+        >
+        <v-card>
+            <v-card-title class="headline">{{this.dialog3Text}}</v-card-title>
+
+            <v-card-text>
+               Vuelve a intentarlo, puedes apoyarte de tu libreta o calculadora si es necesario.
+            </v-card-text>
+
+            <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn
+                color="green darken-1"
+                text
+                @click="dialog3 = false"
+            >
+                Agree
+            </v-btn>
+            </v-card-actions>
+        </v-card>
+        </v-dialog>
     </div>
 </template>
 
 <script>
 export default  {
     data: () => ({
+        dialog3Text: '',
+        dialog3: false,
+        dialog2: false,
         dialog: true,
         alert_succes: false,
         alert_error: false,
@@ -108,12 +172,20 @@ export default  {
             console.log(totalMonedas)
             if(totalPagar == totalMonedas) {
                 console.log('correcto')
-                this.alert_succes = true;
-                this.alert_error = false;
-            } else {
-                console.log('incorrecto')
-                this.alert_error = true;
-                this.alert_succes = false;
+                //this.alert_succes = true;
+                //this.alert_error = false;
+                this.dialog2 = true;
+
+            } else if (totalPagar >= totalMonedas ){
+                console.log('incorrecto');
+                this.dialog3Text = "Diste dinero de menos";
+                this.dialog3 = true;
+                //this.alert_error = true;
+                //this.alert_succes = false;
+            } else if (totalPagar <= totalMonedas) {
+                 console.log('incorrecto');
+                this.dialog3Text = "Diste dinero de mas";
+                this.dialog3 = true;
             }
         }
     },
@@ -150,6 +222,23 @@ export default  {
 </script>
 
 <style scoped>
+
+    .coin-wrapper {
+        width: max-content;
+        margin: auto;
+    }
+
+    .icon-span {
+        font-size: 40px;
+        bottom: m;
+        position: relative;
+        top: -10px;
+        color: goldenrod;
+    }
+
+    .coin {
+        width: 50px;
+    }
 
     .btn-col {
         margin-top: 20px;
