@@ -56,15 +56,15 @@ const createStore = () => {
         },
         {
           storeData:[
-            {img: 'https://image.flaticon.com/icons/svg/1159/1159085.svg', price: 4.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/2224/2224128.svg', price: 6.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/347/347565.svg', price: 3.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/135/135666.svg', price: 2.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/735/735846.svg', price: 5.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/1127/1127837.svg', price: 4.00, total: 0},
           ],
           dificultad: 1,
           title: 'Mi tienda', 
           avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg', 
           type: "tienda",
-          categoria: "Cereales"
+          categoria: "Bebidas"
         },
         {
           storeData:[
