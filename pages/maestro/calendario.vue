@@ -36,30 +36,21 @@
     data: () => ({
       events: [
         {
-          name: 'Vacation',
-          start: '2018-12-30',
-          end: '2019-01-02',
+          name: 'Estudio de tablas',
+           start: '2019-01-14',
+           end: '2019-01-17'
         },
         {
-          name: 'Meeting',
+          name: 'Actividad rompecabezas',
           start: '2019-01-07',
         },
         {
-          name: '30th Birthday',
+          name: 'Actividad mi tienda',
           start: '2019-01-03',
         },
         {
-          name: 'New Year',
-          start: '2019-01-01',
-        },
-        {
-          name: 'Conference',
-          start: '2019-01-21',
-        },
-        {
-          name: 'Hackathon',
-          start: '2019-01-30',
-          end: '2019-02-01',
+          name: 'Examen',
+          start: '2019-01-25',
         },
       ],
     }),
@@ -85,7 +76,8 @@
   }
 
   .v-calendar-wrapper {
-    height: 500px;
+    height: calc(100% - 15px);
+    max-height: 500px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);

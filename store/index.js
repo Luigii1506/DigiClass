@@ -5,40 +5,138 @@ const createStore = () => {
     state: {
       grupos: [
         {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+            name: '2B',
             school: 'Colegio Ninos Heroes',
-            subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
+            select: "Segundo Grado",
+            location: "Salon 203"
           },
-          { divider: true, inset: true },
           {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-            school: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-            subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.",
+            name: '1C',
+            school: 'Colegio la paz',
+            select: "Primer Grado",
+            location: "Salon 103"
           },
-          { divider: true, inset: true },
           {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-            school: 'Oui oui',
-            subtitle: "<span class='text--primary'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?",
+            name: '4B',
+            school: 'Colegio Reina Isabel',
+            select: "Cuarto Grado",
+            location: "Salon 205"
           },
-          { divider: true, inset: true },
           {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-            school: 'Birthday gift',
-            subtitle: "<span class='text--primary'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?",
+            name: '3A',
+            school: 'Colegio Aleman Cuahtemoc Hank',
+            select: "Tercer Grado",
+            location: "Salon 233"
+          },
+          {
+            name: '3A',
+            school: 'Colegio Aleman Cuahtemoc Hank',
+            select: "Tercer Grado",
+            location: "Salon 233"
+          },
+          {
+            name: '3A',
+            school: 'Colegio Aleman Cuahtemoc Hank',
+            select: "Tercer Grado",
+            location: "Salon 233"
           }
       ],
-      prueba: ''
+      storeData: [
+        {
+          storeData:[
+            {img: 'https://image.flaticon.com/icons/svg/135/135728.svg', price: 1.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/415/415767.svg', price: 2.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/2224/2224255.svg', price: 4.00, total: 0}
+          ],
+          dificultad: 0,
+          title: 'Mi tienda', 
+          avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg', 
+          type: "tienda",
+          categoria: "Frutas"
+        },
+        {
+          storeData:[
+            {img: 'https://image.flaticon.com/icons/svg/1703/1703028.svg', price: 4.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/123/123281.svg', price: 4.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/123/123283.svg', price: 4.00, total: 0}
+          ],
+          dificultad: 2,
+          title: 'Mi tienda', 
+          avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg', 
+          type: "tienda",
+          categoria: "Carnes"
+        },
+        {
+          storeData:[
+            {img: 'https://image.flaticon.com/icons/svg/1159/1159085.svg', price: 0.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/2224/2224128.svg', price: 0.00, total: 0},
+            {img: 'https://image.flaticon.com/icons/svg/347/347565.svg', price: 0.00, total: 0},
+          ],
+          dificultad: 3,
+          title: 'Mi tienda', 
+          avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg', 
+          type: "tienda",
+          categoria: "Cereales"
+        },
+      ],
+      estudiantes: [
+        [
+          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+          { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+          { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        ],
+        [
+          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+          { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+          { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        ],
+        [
+          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+          { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+          { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        ],
+        [
+          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+          { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+          { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        ],
+        [
+          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+          { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+          { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        ],
+        [
+          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+          { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+          { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        ]
+      ]
     },
     mutations: {
         setGrupos(state, grupos) {
             state.grupos = grupos;
         }, 
         addGrupos(state, grupos) {
-            state.grupos.push(grupos)
+            state.grupos.push(grupos);
+            state.estudiantes.push([]);
         },
-        setPrueba(state, prueba) {
-            state.prueba = prueba;
+        setTienda(state, tienda) {
+          state.storeData = tienda;
+        },
+        addTienda(state, tienda) {
+          state.storeData.push(tienda);
+        },
+        setEstudiantes(state, estudiante) {
+          state.estudiantes = estudiante;
+        }, 
+        addEstudiante(state, estudiante) {
+          state.estudiantes[estudiante.index].push(estudiante.alumno);
         }
     },
     actions: {     
@@ -47,14 +145,29 @@ const createStore = () => {
         },
         setGrupos(vueContext, grupos) {
             vueContext.commit('setGrupos', grupos);
+        },
+        addTienda(vueContext, tienda) {
+          vueContext.commit('addTienda', tienda);
+        },
+        setTienda(vueContext, tienda) {
+          vueContext.commit('setTienda', tienda);
+        },
+        setEstudiantes(vueContext, estudiante) {
+          vueContext.commit('setEstudiantes', estudiante);
+        },
+        addEstudiante(vueContext, estudiante) {
+          vueContext.commit('addEstudiante', estudiante);
         }
     },
     getters: {
         loadGrupos(state) {
             return state.grupos;
-        }, 
-        loadPrueba(state) {
-            return state.prueba;
+        },
+        loadTienda(state) {
+          return state.storeData;
+        },
+        loadEstudiantes(state) {
+          return state.estudiantes;
         }
     }
   });

@@ -117,5 +117,22 @@ export default {
     font-size: 30px;
   }
 
+  @media only screen and (max-width: 600px) {
+    .title-actividad {
+      display: none;
+    }
+
+    .row-wrapper {
+      height: calc( 100vh - 35px);
+      background-color: rebeccapurple;
+      border: 3px solid white;
+    }
+
+
+    .v-card-actividad {
+      height: 185px;
+    }
+  }
+
 </style>
 

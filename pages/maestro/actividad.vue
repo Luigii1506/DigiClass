@@ -64,7 +64,7 @@
             <v-btn
               color="green darken-1"
               text
-              @click="dialog = false"
+              @click="checkGame"
             >
               Aceptar
             </v-btn>
@@ -117,6 +117,14 @@ export default {
   methods: {
     open() {
       console.log('abierto')
+    },
+    checkGame() {
+      console.log(this.select);
+      this.dialog = false;
+      if(this.select == 'Mi tienda') {
+        this.$router.push('/maestro/formTienda');
+      } else {
+      }
     }
   },
    data: () => ({
@@ -192,6 +200,12 @@ export default {
     color: rebeccapurple;
     font-weight: 900;
     font-size: 30px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .v-card-actividad {
+      height: 185px;
+    }
   }
 
 </style>

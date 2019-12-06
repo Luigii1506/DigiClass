@@ -20,18 +20,19 @@
 
           <v-list-item
               v-else
-              :key="item.title"
-              @click="toDetail(123)"
+              :key="index"
+              @click="toDetail(index)"
           >
               <v-list-item-avatar>
                   <v-avatar color="teal" size="48">
-                      <span class="white--text headline">103</span>
+                      <span class="white--text headline">{{item.name}}</span>
                   </v-avatar>
               </v-list-item-avatar>
 
               <v-list-item-content class="item-content">
-                  <v-list-item-title v-html="item.title"></v-list-item-title>
-                  <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                  <v-list-item-title v-html="item.school"></v-list-item-title>
+                  <v-list-item-subtitle v-html="item.select"></v-list-item-subtitle>
+                  <v-list-item-subtitle v-html="item.location"></v-list-item-subtitle>
               </v-list-item-content>
           </v-list-item>
         </template>

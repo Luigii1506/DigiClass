@@ -125,5 +125,11 @@ export default {
     font-size: 30px;
   }
 
+   @media only screen and (max-width: 600px) {
+    .v-card-actividad {
+      height: 185px;
+    }
+  }
+
 </style>
 

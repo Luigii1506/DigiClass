@@ -11,33 +11,21 @@
                     :lazy-validation="lazy"
                 >
                     <v-text-field
-                        v-model="name"
-                        :rules="nameRules"
-                        label="Nombre del grupo"
+                        v-model="alumno.avatar"
+                        :rules="avatarules"
+                        label="Imagen del alumno"
                         required
                     ></v-text-field>
                     <v-text-field
-                        v-model="school"
-                        :rules="schoolRules"
-                        label="Nombre de la escuela"
+                        v-model="alumno.title"
+                        :rules="titleRules"
+                        label="Nombre del alumno"
                         required
                     ></v-text-field>
-                    <v-select
-                        v-model="select"
-                        :items="items"
-                        :rules="[v => !!v || 'Grado es requerido']"
-                        label="Grado del grupo"
-                        required
-                    ></v-select>
-                      <v-text-field
-                        v-model="location"
-                        :rules="locationRules"
-                        label="Informacion extra del grupo"
-                        required
-                    ></v-text-field>
+                
                     <v-btn
                         color="success"
-                        @click=""
+                        @click="addEstudent"
                         class="btn-submit"
                         >
                         Agregar
@@ -54,12 +42,10 @@
     layout: 'maestroLayout',
     data: () => ({
       valid: true,
-      name: '',
-      school: '',
-      nameRules: [
+      avatarules: [
         v => !!v || 'El nombre del grupo es requerido',
       ],
-       schoolRules: [
+       titleRules: [
         v => !!v || 'El nombre  de la escuela es requerido',
       ],
        locationRules: [
@@ -77,21 +63,27 @@
       checkbox: false,
       lazy: false,
       location: '',
+      alumno: {
+        avatar: '',
+        title: ''
+      },
+      index: 0
     }),
 
     methods: {
-      validate () {
-        if (this.$refs.form.validate()) {
-          this.snackbar = true
-        }
-      },
-      reset () {
-        this.$refs.form.reset()
-      },
-      resetValidation () {
-        this.$refs.form.resetValidation()
-      },
+      addEstudent () {
+        console.log('Index del grupo',this.index);
+        this.$store.dispatch('addEstudiante', {alumno: this.alumno, index: this.index } ).then(() => {
+          console.log('En el estore', this.$store.getters.loadEstudiantes[this.index]);
+          this.$router.push("/maestro/grupos/" + this.index);
+      });
+      }
     },
+    mounted() {
+      this.index = this.$route.params.id;
+      console.log(this.index);
+
+    }
   }
 </script>
 

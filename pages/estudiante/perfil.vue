@@ -1,7 +1,7 @@
 <template>
   <v-card class="v-card-profile">
     <div class="title-perfil">
-        Perfil de maestro
+        Perfil de alumno
     </div>
     <div class="perfil-wrapper">
       <div class="vertical-profile">
@@ -12,28 +12,28 @@
           <v-col cols="12" md="7">
             <div class="vertical">
               <v-text-field
-                value="Luis Gerardo Encias Ramos"
-                label="Nombre Completo"
+                value="John Doe"
+                label="Solo"
+                solo
                 readonly
-                outlined
                 ></v-text-field>
               <v-text-field
-                value="luis.encinas1506@gmail.com"
-                label="Correo Electronico"
-                 readonly
-                outlined
+                value="John Doe"
+                label="Solo"
+                solo  
+                readonly
               ></v-text-field>
               <v-text-field
-                value="LuisGerardo"
-                label="Usuario"
-                 readonly
-                outlined
+                value="John Doe"
+                label="Solo"
+                solo
+                readonly
               ></v-text-field>
               <v-text-field
-                value="01217249"
-                label="Matricula"
-                 readonly
-                outlined
+                value="John Doe"
+                label="Solo"
+                solo
+                readonly
               ></v-text-field>
               <div class="horizontal">
                 <v-btn large color="primary" style="margin-right: 50px;">Editar</v-btn>
@@ -49,7 +49,7 @@
 
 <script>
   export default {
-    layout: 'maestroLayout',
+    layout: 'estudianteLayout',
     data: () => ({
       events: [
         {

@@ -12,19 +12,19 @@
         grow
         color="teal"
       >
-      <v-btn to="/maestro/grupos" nuxt>
+      <v-btn to="/estudiante/amigos" nuxt class="btn-nav">
         <span>Amigos</span>
         <v-icon>mdi-account-group</v-icon>
       </v-btn>
-      <v-btn to="/maestro/perfil" nuxt>
+      <v-btn to="/estudiante/perfil" nuxt class="btn-nav">
         <span>Perfil</span>
         <v-icon>mdi-face-profile</v-icon>
       </v-btn>
-      <v-btn to="/estudiante/actividad" nuxt>
+      <v-btn to="/estudiante/actividad" nuxt class="btn-nav">
         <span>Actividad</span>
         <v-icon>mdi-dice-6</v-icon>
       </v-btn>
-      <v-btn to="/maestro/calendario" nuxt>
+      <v-btn to="/estudiante/tienda" nuxt class="btn-nav">
         <span>Tienda</span>
         <v-icon>mdi-cart</v-icon>
       </v-btn>
@@ -49,5 +49,9 @@
 
   .main {
     background-color: rebeccapurple;
+  }
+
+  .btn-nav {
+      height: 56px !important;
   }
 </style>

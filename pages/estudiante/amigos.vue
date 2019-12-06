@@ -2,13 +2,13 @@
   <div style="position: relative">
     <v-list >
         <div class="title-lista-alumnos">
-            Lista de alumnos
+            Lista de amigos
         </div>
         <div class="list-wrapper">
             <v-list-item
                 v-for="item in items"
                 :key="item.title"
-                @click=""
+                @click="toGame"
             >
                 <v-list-item-avatar>
                     <v-img :src="item.avatar"></v-img>
@@ -24,41 +24,23 @@
             </v-list-item>
         </div>
     </v-list>
-
-    <v-fab-transition>
-      <v-btn
-        class="fab"
-        color="pink"
-        dark
-        absolute
-        bottom
-        right
-        fab
-        large
-        @click="addStudent"
-      >
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
-    </v-fab-transition>
   </div>
 </template>
 
 
 <script>
   export default {
-    layout: 'maestroLayout',
+    layout: 'estudianteLayout',
     data: () => ({
-      items: null,
-      i: 0
+      items: [
+        { active: true, title: 'Mi tienda', avatar: 'https://image.flaticon.com/icons/svg/641/641829.svg' },
+        { active: true, title: 'Rompecabezas', avatar: 'https://image.flaticon.com/icons/svg/1256/1256638.svg' },
+      ]
     }),
-    mounted() {
-      this.i = this.$route.params.id;
-      this.items = this.$store.getters.loadEstudiantes[this.i]
-    },
     methods: {
-      addStudent() {
-        this.$router.push({name: 'maestro-formAlumnos', params: { id: this.i}})
-      }
+        toGame() {
+            this.$router.push('/estudiante');
+        }
     }
   }
 </script>

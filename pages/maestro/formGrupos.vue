@@ -90,9 +90,7 @@
         console.log('Antes de store', this.grupo);
         console.log(this.$store.getters.loadPrueba);
         this.$store.dispatch('addGrupos', this.grupo).then(() => {
-         this.$store.dispatch('addGrupos', { divider: true, inset: true })
-      }).then(() => {
-        this.$router.push("/maestro/grupos");
+          this.$router.push("/maestro/grupos");
       });
         console.log('En el estore', this.$store.getters.loadGrupos);
       }

@@ -64,7 +64,7 @@
             <v-btn
               color="green darken-1"
               text
-              @click="dialog = false"
+              @click="cancelGame"
             >
               Cancelar
             </v-btn>
@@ -91,14 +91,13 @@ export default  {
         objeto2: 0,
         objeto3: 0,
         valor1: 0,
-        storeData : [
-            {img: 'https://image.flaticon.com/icons/svg/135/135728.svg', price: 5.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/415/415767.svg', price: 2.00, total: 0},
-            {img: 'https://image.flaticon.com/icons/svg/2224/2224255.svg', price: 4.00, total: 0},
-        ],
+        storeData: null,
         dificultad: 0
     }),
     methods: {
+        cancelGame() {
+            this.$router.push('/estudiante/actividad/juegos')
+        },
         comparar() {
             var totalPagar = 0;
             var totalMonedas = (this.objeto1 + (2 * this.objeto2) + (5 * this.objeto3));
@@ -118,8 +117,13 @@ export default  {
             }
         }
     },
-    created() {
-        console.log('created');
+    mounted() {
+        let i = this.$route.params.index;
+        this.dificultad = this.$store.getters.loadTienda[i].dificultad;
+        this.storeData = this.$store.getters.loadTienda[i].storeData;
+         console.log('i', i);
+          console.log('store', this.storeData);
+        console.log('data', this.storeData);
         if(this.dificultad == 0) {
             console.log('Dificultado 0');
             for(let i = 0; i < this.storeData.length; i++) {
