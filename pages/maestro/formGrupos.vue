@@ -11,33 +11,33 @@
                     :lazy-validation="lazy"
                 >
                     <v-text-field
-                        v-model="name"
+                        v-model="grupo.name"
                         :rules="nameRules"
                         label="Nombre del grupo"
                         required
                     ></v-text-field>
                     <v-text-field
-                        v-model="school"
+                        v-model="grupo.school"
                         :rules="schoolRules"
                         label="Nombre de la escuela"
                         required
                     ></v-text-field>
                     <v-select
-                        v-model="select"
+                        v-model="grupo.select"
                         :items="items"
                         :rules="[v => !!v || 'Grado es requerido']"
                         label="Grado del grupo"
                         required
                     ></v-select>
                       <v-text-field
-                        v-model="location"
+                        v-model="grupo.location"
                         :rules="locationRules"
                         label="Informacion extra del grupo"
                         required
                     ></v-text-field>
                     <v-btn
                         color="success"
-                        @click=""
+                        @click="addGrupo"
                         class="btn-submit"
                         >
                         Agregar
@@ -77,20 +77,25 @@
       checkbox: false,
       lazy: false,
       location: '',
+      grupo: {
+        name: '',
+        school: '',
+        select: '',
+        location: ''
+      }
     }),
 
     methods: {
-      validate () {
-        if (this.$refs.form.validate()) {
-          this.snackbar = true
-        }
-      },
-      reset () {
-        this.$refs.form.reset()
-      },
-      resetValidation () {
-        this.$refs.form.resetValidation()
-      },
+      addGrupo () {
+        console.log('Antes de store', this.grupo);
+        console.log(this.$store.getters.loadPrueba);
+        this.$store.dispatch('addGrupos', this.grupo).then(() => {
+         this.$store.dispatch('addGrupos', { divider: true, inset: true })
+      }).then(() => {
+        this.$router.push("/maestro/grupos");
+      });
+        console.log('En el estore', this.$store.getters.loadGrupos);
+      }
     },
   }
 </script>

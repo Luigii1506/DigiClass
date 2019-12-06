@@ -50,12 +50,41 @@
                 </v-col>
             </v-row>
         </div>
+          <v-dialog
+          v-model="dialog"
+          max-width="500"
+        >
+        <v-card>
+          <v-card-title class="headline">Reglas del juego</v-card-title>
+          <v-card-text>
+            Compra todo lo que se te pide en la lista utilizando las monedas necesarias para pagar exactamente el total.
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="green darken-1"
+              text
+              @click="dialog = false"
+            >
+              Cancelar
+            </v-btn>
+            <v-btn
+              color="green darken-1"
+              text
+              @click="dialog = false"
+            >
+              Aceptar
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </div>
 </template>
 
 <script>
 export default  {
     data: () => ({
+        dialog: true,
         alert_succes: false,
         alert_error: false,
         objeto1: 0,

@@ -47,7 +47,7 @@ export default {
       this.$router.push({ name: "maestro-perfil" });
     },
     goEstudiante() {
-      this.$router.push({ name: "estudiante" });
+      this.$router.push({ name: "estudiante-actividad" });
     }
   },
 }

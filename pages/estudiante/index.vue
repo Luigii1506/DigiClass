@@ -8,7 +8,7 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import Tienda from '~/components/Tienda.vue'
 
 export default {
-  layout: 'maestroLayout',
+  layout: 'estudianteLayout',
   components: {
     Tienda
   }
