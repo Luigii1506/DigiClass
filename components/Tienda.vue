@@ -67,7 +67,7 @@ export default  {
             {img: 'https://image.flaticon.com/icons/svg/415/415767.svg', price: 2.00, total: 0},
             {img: 'https://image.flaticon.com/icons/svg/2224/2224255.svg', price: 4.00, total: 0},
         ],
-        dificultad: 3
+        dificultad: 0
     }),
     methods: {
         comparar() {
